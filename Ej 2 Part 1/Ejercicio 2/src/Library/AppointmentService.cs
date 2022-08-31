@@ -4,10 +4,11 @@ using System.Text;
 namespace Library
 {
     //AppointmentService no respeta el SRP (principio de responsabilidad única), porque posee la responsabilidad de conocer los datos del paciente, los datos del doctor, los datos de la consulta, y luego verificar que ningún dato sea empty o null. 
-    //Para reparar eso creare 2 clases mas
+    //Para reparar eso creare 4 clases mas
     //Patient, que conocera los datos del paciente y verificara si los datos son validos
-    //Doctor, que conoce y verificara si el nombre del doctor, el lugar y la fecha son correctos
-    //CreateAppointment, crear la cita
+    //Doctor, que conoce y verificara si el nombre del doctor
+    //Appointment, conoce el dia y el lugar y verifica si son correctos
+    //CreateAppointment, crear la cita con todos los datos
 
     public class AppointmentService
     {

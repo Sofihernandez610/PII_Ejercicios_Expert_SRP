@@ -7,11 +7,19 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            string appointmentResult = AppointmentService.CreateAppointment("Steven Jhonson", "986782342", "5555-555-555", DateTime.Now, "Wall Street", "Armand");
-            Console.WriteLine(appointmentResult);
+            FechayLugar fecha1= new FechayLugar("17/8","Arocena");
+            Paciente paciente1= new Paciente("Steven Jhonson","099555656","17","5555-555-555");
+            Doctor doctor1 = new Doctor("Steven Jhonson", "Medicina General");
+            bool isvalid = Validar.ValidarConsulta(doctor1, paciente1, fecha1);
+            if (isvalid==true)
+            {
+                Consulta consult= new Consulta(paciente1,fecha1,doctor1);
+                Console.WriteLine("se creo correctamente la consulta");
+            }
 
-            string appointmentResult2 = AppointmentService.CreateAppointment("Ralf Manson", "", "5555-555-555", DateTime.Now, "Queen Street", "");
-            Console.WriteLine(appointmentResult2);
+        
+
+            
         }
     }
 }
